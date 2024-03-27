@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Title</title>
+</head>
+<body>
+<h1 th:text="${title}">title</h1>
+<form method="post" action="#" th:action="@{/inquiry/confirm}">
+    <label for="name">name</label>
+    <input id="name" name="name" type="text"><br>
+    <label for="email">email</label>
+    <input id="email" name="email" type="text"><br>
+    <label for="contents">detail</label>
+    <textarea id="contents" name="contents" type="text"></textarea>
+    <input type="submit" value="Confirm">
+</form>
+<p th:text="${name}">name</p>
+<p th:text="${email}">email</p>
+<p th:text="${contents}">contents</p>
+</body>
+</html>
