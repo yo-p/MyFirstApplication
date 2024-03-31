@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class InquiryForm {
-    @Size(min = 1, max = 20, message = "please input 20characters or less")
+
     private String name;
 
     @NotNull
@@ -13,7 +13,7 @@ public class InquiryForm {
     private String email;
 
     @NotNull
-    private String contens;
+    private String contents;
 
     public InquiryForm() {
     }
@@ -34,11 +34,11 @@ public class InquiryForm {
         this.email = email;
     }
 
-    public String getContens() {
-        return contens;
+    public String getContents() {
+        return contents;
     }
 
-    public void setContens(String contens) {
-        this.contens = contens;
+    public void setContents(String contents) {
+        this.contents = contents;
     }
 }
