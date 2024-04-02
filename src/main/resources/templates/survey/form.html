@@ -6,21 +6,22 @@
 </head>
 <body>
 <h1 th:text="${title}">title</h1>
-<!--<h2 th:text="${complete}"></h2>-->
-<!--<form method="post" action="#" th:action="@{/inquiry/confirm}" th:object="${inquiryForm}">-->
-<!--    <label for="name">name</label>-->
-<!--    <input id="name" name="name" type="text" th:value="*{name}"><br>-->
-<!--    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>-->
-<!--    <label for="email">email</label>-->
-<!--    <input id="email" name="email" type="text" th:value="*{email}"><br>-->
-<!--    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>-->
-<!--    <label for="contents">detail</label>-->
-<!--    <textarea id="contents" name="contents" th:field="*{contents}" type="text"></textarea>-->
-<!--    <div th:if="${#fields.hasErrors('contents')}" th:errors="*{contents}"></div>-->
-<!--    <input type="submit" value="Confirm">-->
-<!--</form>-->
-<!--<p th:text="${name}">name</p>-->
-<!--<p th:text="${email}">email</p>-->
-<!--<p th:text="${contents}">contents</p>-->
+<h2 th:text="${complete}"></h2>
+<form method="post" action="#" th:action="@{/survey/confirm}" th:object="${surveyForm}">
+    <label for="age">年齢 : </label>
+    <input id="age" name="age" type="number" th:value="*{age}"><br>
+    <div th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
+    <label>満足度 : </label>
+    <input type="radio" name="satisfaction" value="1" th:checked="*{satisfaction == 1}">1
+    <input type="radio" name="satisfaction" value="2" th:checked="*{satisfaction == 2}">2
+    <input type="radio" name="satisfaction" value="3" th:checked="*{satisfaction == 3}">3
+    <input type="radio" name="satisfaction" value="4" th:checked="*{satisfaction == 4}">4
+    <input type="radio" name="satisfaction" value="5" th:checked="*{satisfaction == 5}">5<br>
+    <div th:if="${#fields.hasErrors('satisfaction')}" th:errors="*{satisfaction}"></div>
+    <label for="comment">コメント : </label>
+    <textarea id="comment" name="comment" rows="3" cols="40" th:field="*{comment}" type="textarea"></textarea><br>
+    <div th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}"></div>
+    <input type="submit" value="確認ページへ">
+</form>
 </body>
 </html>

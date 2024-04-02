@@ -16,6 +16,30 @@ public class SurveyForm {
     @Max(5)
     private int satisfaction;
     @NotNull
-    @Size(min = 1, max = 200, message = "1 ~ 200文字以内で入力してください。")
+    @Size(min = 1, max = 200, message = "200文字以内で入力してください。")
     private String comment;
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getSatisfaction() {
+        return satisfaction;
+    }
+
+    public void setSatisfaction(int satisfaction) {
+        this.satisfaction = satisfaction;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 }
