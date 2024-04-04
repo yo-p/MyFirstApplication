@@ -11,9 +11,9 @@
     <p th:text="*{satisfaction}"></p>
     <p th:text="*{comment}"></p>
     <form method="post" action="#" th:action="@{/survey/form}">
-        <input name="age" type="hidden" th:value="*{age}"><br>
-        <input name="" type="hidden" th:value="*{satisfaction}"><br>
-        <input name="comment" th:value="*{comment}" type="hidden"><br>
+        <input type="hidden" name="age" th:value="*{age}"><br>
+        <input type="hidden" name="satisfaction"  th:value="*{satisfaction}"><br>
+        <input type="hidden" name="comment" th:value="*{comment}" ><br>
         <input type="submit" value="戻る">
     </form>
     <form method="post" action="#" th:action="@{/survey/complete}">
