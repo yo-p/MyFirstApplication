@@ -14,7 +14,7 @@ import java.util.Objects;
 @Repository
 public class InquryDaoImp implements  InquiryDao{
     @Autowired
-    private  final JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     public InquryDaoImp(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -34,6 +34,7 @@ public class InquryDaoImp implements  InquiryDao{
         for (Map<String, Object> map : resultList) {
             Inquiry inquiry = new Inquiry();
             inquiry.setId((int)map.get("id"));
+            inquiry.setName((String) map.get("name"));
             inquiry.setEmail((String) map.get("email"));
             inquiry.setContents((String) map.get("contents"));
             inquiry.setCreated(((Timestamp) map.get("created")).toLocalDateTime());
@@ -41,4 +42,5 @@ public class InquryDaoImp implements  InquiryDao{
         }
         return list;
     }
+
 }
