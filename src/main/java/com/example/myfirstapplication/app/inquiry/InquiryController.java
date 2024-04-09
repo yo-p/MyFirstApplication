@@ -27,15 +27,15 @@ public class InquiryController {
     public String index(Model model) {
         List<Inquiry> inquiryList = inquiryService.getAll();
 
-        Inquiry inquiry = new Inquiry();
-        inquiry.setId(4);
-        inquiry.setName("Hello");
-        inquiry.setEmail("sample@email");
-        inquiryService.update(inquiry);
+//        Inquiry inquiry = new Inquiry();
+//        inquiry.setId(4);
+//        inquiry.setName("Hello");
+//        inquiry.setEmail("sample@email");
+//        inquiryService.update(inquiry);
 
         model.addAttribute("inquiryList", inquiryList);
         model.addAttribute("title", "Inquiry Index");
-        return "inquiry/index";
+        return "inquiry/index_boot";
     }
     @GetMapping("/form")
     public  String form(InquiryForm inquiryForm,
