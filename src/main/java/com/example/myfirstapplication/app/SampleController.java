@@ -22,7 +22,7 @@ public class SampleController {
     @GetMapping("/test")
     public String index(Model model) {
         String sql = "select id, name, email, contents "
-                + "from inquiry where id = 1";
+                + "from inquiry where id = 4";
         Map<String, Object> map = jdbcTemplate.queryForMap(sql);
         model.addAttribute("name", map.get("name"));
         model.addAttribute("email", map.get("email"));
